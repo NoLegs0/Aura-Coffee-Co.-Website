@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        
+        <header>
+            <h1>Aura Coffee & Co.</h1>
+           
+           <button class="menu-hamburguer" aria-label="Menu">
+               <span></span>
+               <span></span>
+               <span></span>
+           </button>
+           
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#cafes">Cafés</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#contato" class="btn">Pedir Grãos</a>
+        </header>
+        
+        <section id="inicio">
+            <h1>A arte do café especial em cada grão.</h1>
+            <h2>Sinta o aroma e o sabor de uma micro-torrefação artesanal feita para quem aprecia café de verdade.</h2>
+            <a href="#cafes" class="btn-primary">Conhecer Cafés</a>
+            
+            <picture>
+                <source media="(min-width: 1024px)" srcset="foto1.jpeg">
+                <source media="(min-width: 768px)" srcset="foto1.jpeg">
+                <source media="(min-width: 480px)" srcset="foto1.jpeg">
+                <img src="foto1.jpeg" alt="Café especial">
+            </picture>
+        </section>
+        
+        <section id="sobre">
+            <h2>Do Grão à Xícara: Nossa Paixão Pela Torra Perfeita</h2>
+            <p>A Aura Coffee & Co. nasceu da paixão pelo extraordinário. Como uma micro-torrefação artesanal, selecionamos manualmente lotes exclusivos de pequenos produtores brasileiros. Nosso processo de torra valoriza os aromas naturais e perfis sensoriais únicos de cada grão, oferecendo uma experiência marcante para o seu dia a dia ou evento corporativo.</p>
+             
+             <picture>
+                <source media="(min-width: 1024px)" srcset="foto2.webp">
+                <source media="(min-width: 768px)" srcset="foto2.webp">
+                <source media="(min-width: 480px)" srcset="foto2.webp">
+                <img src="foto2.webp" alt="Torra de café">
+            </picture>
+            
+        </section>
+        
+        <section id="cafes" class="secao-cafes">
+          <h2>Nossos Cafés Especiais</h2>
+          <div class="container-cards">
+            <article class="card">
+              <img src="foto3.webp" alt="Grão Bourbon Amarelo" class="card-img">
+              <div class="card-conteudo">
+                <h3 class="card-titulo">Grão Bourbon Amarelo</h3>
+                <p class="card-descricao">Café encorpado com notas sensoriais de caramelo, mel e acidez cítrica suave.</p>
+                <div class="card-rodape">
+                  <span class="card-preco">R$ 42,00</span>
+                  <button class="btn-card">Encomendar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="foto4.jpeg" alt="Reserva Torra Média" class="card-img">
+              <div class="card-conteudo">
+                <h3 class="card-titulo">Reserva Torra Média</h3>
+                <p class="card-descricao">Equilíbrio perfeito entre doçura e corpo. Notas de chocolate amargo e nozes.</p>
+                <div class="card-rodape">
+                  <span class="card-preco">R$ 38,00</span>
+                  <button class="btn-card">Encomendar</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img src="foto5.jpeg" alt="Blend Espresso Intenso" class="card-img">
+              <div class="card-conteudo">
+                <h3 class="card-titulo">Blend Espresso Intenso</h3>
+                <p class="card-descricao">Torra escura pensada para um espresso marcante, cremoso e com retrogosto prolongado.</p>
+                <div class="card-rodape">
+                  <span class="card-preco">R$ 45,00</span>
+                  <button class="btn-card">Encomendar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+                    
+        <section id="contato">
+            <h2>Faça seu Pedido ou Evento Conosco</h2>
+            <h3>Precisa de grãos para sua empresa ou quer levar nossa cafeteria para o seu evento? Envie uma mensagem!</h3>
+           
+            <form id="formulario">
+                <input type="text" name="nome" placeholder="Seu Nome Completo" required>
+                <input type="email" name="email" placeholder="Seu E-Mail" required>
+                <select name="tipo-pedido">
+                    <option value="">Selecione o tipo de pedido</option>
+                    <option value="graos">Encomenda de Grãos</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="outros">Outros Assuntos</option>
+                </select>
+                <textarea name="mensagem" placeholder="Descreva seu pedido ou dúvida..." required></textarea>
+                <button type="submit">Enviar</button>
+                <div>
+                    <p id="alerta"></p>
+                </div>
+            </form>
+        </section>
+        
+        <footer>
+            <div>
+                <h3>Aura Coffee & Co.</h3>
+                <p>Micro-torrefação e Cafeteria Artesanal.</p>
+            </div>
+            <div>
+                <h3>Horário de Funcionamento</h3>
+                <p>Segunda a Sexta: 07h30 às 19h00</p>
+                <p>Sábado e Domingo: 08h00 às 18h00</p>
+            </div>
+            <div>
+                <h3>Endereço & Redes Sociais</h3>
+                <p>Rua dos Grãos, 104 — Bairro Central, São Paulo / SP</p>
+                <p>Instagram: <a href="#">@auracoffe.co</a></p>
+                <p>WhatsApp: <a href="#">(11) 99999-8888</a></p>
+            </div>
+        </footer>
+    
+    <script src="script.js"></script>
+    </body>
+</html>

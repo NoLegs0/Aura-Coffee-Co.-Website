@@ -1,0 +1,428 @@
+/* --- GLOBAL / BASE --- */
+
+        :root {
+  --bg-primary: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --text-main: #2C221E;
+  --text-muted: #6B5B52;
+  --primary-accent: #8C533E;
+  --secondary-accent: #D4A373;
+  --border-color: #E8DFD8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- ESTADO DO BOTÃO QUANDO SELECIONADO --- */
+.btn-card.selecionado {
+  background-color: #593122; /* Um tom mais escuro para mostrar que foi escolhido */
+  transform: scale(0.98);    /* Dá um pequeno efeito de clique/pressionado */
+}
+
+/* --- BOTÃO HAMBÚRGUER --- */
+.menu-hamburguer {
+    display: none; /* Escondido por padrão no desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    transform-origin: center;
+}
+
+/* Animação do X perfeito */
+.menu-hamburguer.ativo span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-hamburguer.ativo span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.menu-hamburguer.ativo span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+     /* --- CABEÇALHO --- */
+     
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 1.5rem 5%;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--primary-accent);
+}
+
+/* Botão CTA do Header */
+header .btn {
+  text-decoration: none;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+header .btn:hover {
+  background-color: #724130;
+}
+
+/* Regras para telemóveis */
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex; /* Mostra o botão no telemóvel */
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        width: 90%;
+        border-radius: 8px;
+        background-color: var(--bg-card);
+        padding: 1.5rem 5%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid var(--border-color);
+        box-sizing: border-box;
+        
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+        width: 100%;
+    }
+
+    header nav.ativo {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+     
+     /* --- HERO / INÍCIO --- */
+     
+#inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#inicio h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+#inicio h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #724130;
+  transform: translateY(-2px);
+}
+
+#inicio picture img {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+     /* --- SOBRE --- */
+     
+#sobre {
+  padding: 4rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#sobre h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#sobre p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+#sobre picture img {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+     /* --- CARDS / CAFÉS --- */
+     
+.secao-cafes {
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.secao-cafes h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-conteudo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-titulo {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-descricao {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-preco {
+  color: var(--secondary-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn-card {
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-card:hover {
+  background-color: #724130;
+}
+
+     /* --- CONTATO --- */
+     
+#contato {
+  padding: 4rem 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contato h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#contato h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+#contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+#contato input,
+#contato select,
+#contato textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+#contato textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#contato button {
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#contato button:hover {
+  background-color: #724130;
+}
+
+     /* --- RODAPÉ --- */
+     
+footer {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 5% 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+footer div {
+  flex: 1;
+  min-width: 220px;
+}
+
+footer h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--primary-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
